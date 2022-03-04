@@ -1,0 +1,21 @@
+<div class="row mx-0">
+    <ng-container *ngFor="let item of data | paginate: { itemsPerPage: 6, currentPage: p }">
+        <div class="col-1"></div>
+        <div class="col-2 card-beer mb-2 mt-2" (click)="openModal(item)">
+            <div class="row">
+                <div class="col-12 mt-2" style="text-align: center; min-height: 343px;">
+                    <img [src]="item.image_url" width="30" height="30" class="d-inline-block align-top" alt=""
+                        style="width: 30%;height: 75%;">
+                </div>
+                <div class="col-12" style="text-align: center;">
+                    <h4>{{item.name}}</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </ng-container>
+<div class="col-12 mt-3" style="text-align: center;color: blue!important;">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+</div>
+
